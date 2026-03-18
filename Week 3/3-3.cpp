@@ -15,7 +15,7 @@ int main(void) {
 	vector <string> words;
 	string s;
 
-	cout << "문장을 입력하세요 : ";
+	cout << "문장을 입력한 후 Ctrl + Z 입력 : ";
 
 	while (cin >> s) {
 		words.push_back(s);
@@ -23,27 +23,22 @@ int main(void) {
 
 	cin.clear();
 
-	string d;
+	string search;
 	cout << "단어를 입력하세요 : ";
-	cin >> d;
+	cin >> search;
 
 
 	sort(words.begin(), words.end());
 	
-	string temp = words[0];
-
 	int count = 0;
 
 	for (int i = 0; i < words.size(); i++) {
-		if (words[i] == d) {
+		if (words[i] == search) {
 			++count;
-			
 		}
-		cout << d << " : " << count << endl;
-		d = words[i];
-		count = 0;
 	}
 
+	cout << search << " : " << count << " 개" << endl;
 	
 	return 0;
 
